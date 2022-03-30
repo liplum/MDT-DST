@@ -1,7 +1,7 @@
 displayName: "Don't Starve"
 name: "dst"
 author: "[#891213[]]Liplum[[]]"
-main: "net.liplum.DSTMod"
+main: "net.liplum.DstMod"
 description: "Don't starve is available in Mindustry now!"
 version: 1.0
 minGameVersion: 135
