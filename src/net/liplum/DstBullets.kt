@@ -9,8 +9,7 @@ object DstBullets : ContentList {
     @JvmStatic lateinit var powerOrb: PowerOrb
     @JvmStatic lateinit var powerOrbLarge: PowerOrb
     override fun load() {
-        powerOrb = object : PowerOrb(5f, 240f) {
-            init {
+        powerOrb = PowerOrb(5f, 240f).apply {
                 textureName = Vars.content.transformName("power-orb")
                 lifetime = 130f
                 hitEffect = Fx.none
@@ -22,7 +21,6 @@ object DstBullets : ContentList {
                 hitSize = 35f
                 pierce = true
                 pierceCap = 3
-            }
         }
         powerOrbLarge = (powerOrb.copy() as PowerOrb).apply {
             pierceCap = Int.MAX_VALUE

@@ -12,7 +12,6 @@ import net.liplum.components.SharingHealth
 
 object DstBlocks : ContentList {
     @JvmStatic lateinit var thuliumWall: StatedWall
-    @JvmStatic val sharingHealth = SharingHealth()
     @JvmStatic lateinit var ancientAltar: GenericCrafter
     @JvmStatic lateinit var eyeTurret: EyeTurret
     override fun load() {
@@ -28,7 +27,7 @@ object DstBlocks : ContentList {
             buildCostMultiplier = 2f
             stateNumber = 4
             update = true
-            components.add(sharingHealth)
+            components.add(SharingHealth)
         }
         ancientAltar = AncientAltar("ancient-altar").apply {
             requirements(

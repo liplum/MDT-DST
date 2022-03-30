@@ -11,7 +11,7 @@ import mindustry.graphics.Drawf
 import mindustry.graphics.Layer
 import mindustry.world.blocks.defense.turrets.ItemTurret
 
-open class EyeTurret(name: String?) : ItemTurret(name) {
+open class EyeTurret(name: String) : ItemTurret(name) {
     lateinit var bodyTR: TextureRegion
     lateinit var hotBodyTR: TextureRegion
     lateinit var eyeBallTR: TextureRegion
