@@ -23,9 +23,10 @@ object DstBlocks : ContentList {
             )
             health = 2500
             hasShadow = false
-            size = 2
+            size = 1
             buildCostMultiplier = 2f
             stateNumber = 4
+            drawSize = 0.8f
             update = true
             components.add(SharingHealth)
         }
