@@ -4,5 +4,5 @@ author: "[#891213[]]Liplum[[]]"
 main: "net.liplum.DstMod"
 description: "Don't starve is available in Mindustry now!"
 version: 1.0
-minGameVersion: 135
+minGameVersion: 136
 java: true

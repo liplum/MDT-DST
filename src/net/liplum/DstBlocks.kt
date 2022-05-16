@@ -1,7 +1,6 @@
 package net.liplum
 
 import mindustry.content.Items
-import mindustry.ctype.ContentList
 import mindustry.type.Category
 import mindustry.type.ItemStack
 import mindustry.world.blocks.production.GenericCrafter
@@ -43,7 +42,7 @@ object DstBlocks : ContentList {
             size = 3
             hasItems = true
             hasShadow = false
-            consumes.item(DstItems.thulium, 6)
+            consumeItem(DstItems.thulium, 6)
         }
         eyeTurret = EyeTurret("eye-turret").apply {
             requirements(
@@ -58,9 +57,9 @@ object DstBlocks : ContentList {
             )
             maxAmmo = 20
             size = 3
-            reloadTime = 60f
+            reload = 60f
             range = 500f
-            recoilAmount = 3f
+            recoil = 3f
         }
     }
 }

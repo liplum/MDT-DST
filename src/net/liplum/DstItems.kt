@@ -1,10 +1,9 @@
 package net.liplum
 
 import arc.graphics.Color
-import mindustry.ctype.ContentList
 import mindustry.type.Item
 
-object DstItems :ContentList{
+object DstItems : ContentList {
     @JvmStatic lateinit var thulium: Item
     @JvmStatic lateinit var thuliumBar: Item
     override fun load() {
