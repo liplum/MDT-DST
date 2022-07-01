@@ -38,7 +38,7 @@ object DstBlocks : ContentList {
                 )
             )
             outputItem = ItemStack(DstItems.thuliumBar, 1)
-            craftTime = 80f
+            craftTime = 100f
             size = 3
             hasItems = true
             hasShadow = false

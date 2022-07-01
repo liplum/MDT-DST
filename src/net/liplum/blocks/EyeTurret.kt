@@ -5,9 +5,11 @@ import arc.graphics.g2d.Draw
 import arc.graphics.g2d.TextureRegion
 import arc.math.Angles
 import arc.math.geom.Vec2
+import mindustry.Vars
 import mindustry.graphics.Drawf
 import mindustry.graphics.Layer
 import mindustry.world.blocks.defense.turrets.ItemTurret
+import mindustry.world.draw.DrawDefault
 
 open class EyeTurret(name: String) : ItemTurret(name) {
     lateinit var bodyTR: TextureRegion
@@ -17,6 +19,7 @@ open class EyeTurret(name: String) : ItemTurret(name) {
 
     init {
         hasShadow = false
+        drawer = DrawDefault()
     }
 
     override fun load() {
@@ -57,8 +60,10 @@ open class EyeTurret(name: String) : ItemTurret(name) {
                 movement.setAngle(
                     Angles.angle(eyeBallX, eyeBallY, aimX, aimY)
                 )
-            } else {
+            } else if (isShooting) {
                 movement.setAngle(rotation)
+            } else {
+                movement.setAngle(this.angleTo(Vars.player))
             }
             Draw.rect(
                 eyeTR,
