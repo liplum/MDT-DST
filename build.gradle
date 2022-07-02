@@ -1,30 +1,24 @@
-apply plugin: "java"
-
-version '1.0'
-
-targetCompatibility = 8
-// I don't use "com.github.Anuken:jabel:$jabelVersion" so sourceCompatibility is not 16 but 8
-sourceCompatibility = 8
-
-sourceSets.main.java.srcDirs = ["src"]
-
 buildscript {
     repositories {
-        mavenCentral()
-        gradlePluginPortal()
-        maven {
-            url "https://www.jitpack.io"
-        }
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
-        classpath "io.github.liplum.mgpp:MindustryGradlePluginPlumy:1.0.1"
+        maven { url "https://www.jitpack.io" }
     }
 }
-apply plugin: "kotlin"
-apply plugin: "io.github.liplum.mgpp"
+plugins {
+    id 'java'
+    id "org.jetbrains.kotlin.jvm" version "1.7.0"
+    id "io.github.liplum.mgpp" version "1.0.3"
+}
 
-sourceSets.main.kotlin.srcDirs = ["src"]
+group 'net.liplum'
+version '1.1'
+targetCompatibility = 8
+sourceCompatibility = 8
+sourceSets {
+    main {
+        java.srcDirs = ["src"]
+        kotlin.srcDirs = ["src"]
+    }
+}
 
 repositories {
     mavenCentral()
@@ -44,10 +38,8 @@ mindustry {
     server {
         be version: '22740'
     }
-    def name = project.archivesBaseName
-    deploy {
-        outputName = name
-    }
+    meta.version = '1.1'
+    meta.subtitle = meta.description
 }
 dependencies {
     use(io.github.liplum.mindustry.BuildScript) {
