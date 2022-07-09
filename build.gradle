@@ -6,7 +6,7 @@ buildscript {
 plugins {
     id 'java'
     id "org.jetbrains.kotlin.jvm" version "1.7.0"
-    id "io.github.liplum.mgpp" version "1.0.3"
+    id "io.github.liplum.mgpp" version "1.0.12"
 }
 
 group 'net.liplum'
@@ -22,9 +22,7 @@ sourceSets {
 
 repositories {
     mavenCentral()
-    use(io.github.liplum.mindustry.BuildScript) {
-        mindustryRepo()
-    }
+    mindustryRepo()
 }
 
 mindustry {
@@ -42,9 +40,7 @@ mindustry {
     meta.subtitle = meta.description
 }
 dependencies {
-    use(io.github.liplum.mindustry.BuildScript) {
-        importMindustry()
-    }
+    importMindustry()
 }
 mindustryAssets {
     // Set the assets root
